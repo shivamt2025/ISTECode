@@ -48,7 +48,7 @@ const Topbar: React.FC<TopbarProps> = ({ problemPage }) => {
 			<div className={`flex w-full items-center justify-between ${!problemPage ? "max-w-[1200px] mx-auto" : ""}`}>
 				<Link href='/' className='h-[25px] flex'>
 					<Image src='/1iste.png' alt='Logo' height={100} width={80}  />
-					<Image src='/3iste.png' alt='logo img' width={150} height={80}  style={{ marginRight: '125px' }} />
+					<Image src='/3iste.png' alt='logo img' width={150} height={80}  style={{ marginRight: '300px' }} />
 				</Link>
 
 				{problemPage && (
@@ -79,7 +79,17 @@ const Topbar: React.FC<TopbarProps> = ({ problemPage }) => {
 
 
 				<div className='flex items-center space-x-4 flex-1 justify-end'>
-					
+				
+					<div>
+						<a
+							href='https://echo-sync.vercel.app/'
+							target='_blank'
+							rel='noreferrer'
+							className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
+						>
+							MEET
+						</a>
+					</div>
 					{!user && (
 						<Link
 							href='/auth'
