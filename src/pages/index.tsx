@@ -2,7 +2,7 @@ import ProblemsTable from "@/components/ProblemsTable/ProblemsTable";
 import Topbar from "@/components/Topbar/Topbar";
 import useHasMounted from "@/hooks/useHasMounted";
 import Typewriter from 'typewriter-effect';
-
+import Footer from "@/components/footer/Footer"
 import { useState } from "react";
 
 export default function Home() {
@@ -55,12 +55,17 @@ export default function Home() {
                         <ProblemsTable setLoadingProblems={setLoadingProblems} />
                     </table>
                 </div>
+                {!loadingProblems && (
+                <div>
+                    <Footer />
+                </div>
+                )}
             </main>
         </>
     );
 }
 
-const LoadingSkeleton = () => {
+function LoadingSkeleton() {
     return (
         <div className='flex items-center space-x-4 mt-4 px-2 sm:px-6'>
             <div className='w-6 h-6 rounded-full bg-dark-layer-1'></div>
@@ -70,4 +75,4 @@ const LoadingSkeleton = () => {
             <span className='sr-only'>Loading...</span>
         </div>
     );
-};
+}
